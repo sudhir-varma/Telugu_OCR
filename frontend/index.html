@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="te">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Telugu OCR & Speech</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="main-wrapper" id="mainWrapper">
+            <!--  OCR & TTS Form -->
+            <div class="container">
+                <h2>Telugu OCR & Speech</h2>
+
+                <!-- Document Upload & Capture Section -->
+                <div class="upload-section">
+                    <div class="file-capture-row">
+                        <!-- Hidden actual file input -->
+                        <input
+                            type="file"
+                            id="imageInput"
+                            accept="image/*, application/pdf"
+                            onchange="handleFileSelect()"
+                            style="display: none" />
+
+                        <!-- Custom Styled Buttons -->
+                        <button
+                            type="button"
+                            id="customChooseFileBtn"
+                            onclick="document.getElementById('imageInput').click()">
+                            Choose a File
+                        </button>
+                        <button type="button" id="captureWebcamBtn" onclick="captureLiveImage()">
+                            Capture live IMG
+                        </button>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="extractBtn" onclick="extractText()">Upload & Extract Text</button>
+                        <button id="viewImageBtn" onclick="toggleViewImage()" style="display: none">View Image</button>
+                    </div>
+
+                    <div id="extractLoading" style="display: none">Scanning document... please wait.</div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd" />
+
+                <!-- Text to Speech Section -->
+                <p class="label">Edit text or type manually:</p>
+                <textarea id="textInput" placeholder="Extracted Telugu text will appear here..."></textarea>
+
+                <div class="action-buttons">
+                    <button id="generateBtn" onclick="generateSpeech()">Generate Audio</button>
+                    <button id="brailleBtn" onclick="generateBraille()">Generate Braille</button>
+                </div>
+
+                <div id="audioLoading" style="display: none">Generating Audio... Please wait.</div>
+                <audio id="audioPlayer" controls style="display: none"></audio>
+
+                <!-- Braille Output Container -->
+                <div id="brailleContainer" style="display: none; margin-top: 15px">
+                    <p class="label">Braille Translation:</p>
+                    <textarea id="brailleOutput" readonly></textarea>
+                    <button id="downloadBrfBtn" onclick="downloadBRF()">Download .BRF File</button>
+                </div>
+            </div>
+
+            <!-- Attached Image Preview -->
+            <div class="image-panel" id="imagePanel">
+                <div class="panel-header">
+                    <h3>Uploaded Document</h3>
+                    <button class="close-btn" onclick="toggleViewImage()">✕</button>
+                </div>
+                <div class="image-container">
+                    <img id="previewImg" src="" alt="Uploaded Image Preview" />
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

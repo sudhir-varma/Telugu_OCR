@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 420px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+}
+.label {
+    margin: 10px 0 5px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#extractBtn {
+    background-color: #28a745;
+    flex: 2;
+}
+#extractBtn:hover {
+    background-color: #218838;
+}
+
+#viewImageBtn {
+    background-color: #17a2b8;
+    flex: 1;
+}
+#viewImageBtn:hover {
+    background-color: #138496;
+}
+
+#extractLoading,
+#audioLoading {
+    margin-top: 10px;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+}
+
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.file-capture-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#customChooseFileBtn,
+#captureWebcamBtn {
+    flex: 1;
+    height: 42px;
+    padding: 0;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#customChooseFileBtn {
+    background-color: #007bff;
+}
+#customChooseFileBtn:hover {
+    background-color: #0056b3;
+}
+
+#captureWebcamBtn {
+    background-color: #6c757d;
+}
+#captureWebcamBtn:hover {
+    background-color: #5a6268;
+}
+
+.image-panel {
+    display: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    max-height: 80vh;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.main-wrapper.show-image .image-panel {
+    display: flex;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    width: auto;
+    padding: 0 5px;
+}
+.close-btn:hover {
+    color: #000;
+    background: none;
+}
+
+.image-container {
+    overflow: auto;
+    text-align: center;
+    max-height: 65vh;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#generateBtn {
+    background-color: #007bff;
+    flex: 1;
+}
+
+#brailleBtn {
+    background-color: #6f42c1;
+    flex: 1;
+}
+#brailleBtn:hover {
+    background-color: #5a32a3;
+}
+
+#brailleOutput {
+    font-size: 28px;
+    min-height: 80px;
+    background-color: #f8f9fa;
+    color: #000;
+    cursor: text;
+    margin-bottom: 0;
+}
+
+/* Download BRF Button */
+#downloadBrfBtn {
+    background-color: #28a745;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#downloadBrfBtn:hover {
+    background-color: #218838;
+}
