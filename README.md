@@ -16,7 +16,7 @@ Powered by **FastAPI**, **OpenCV**, and **Sarvam AI**.
 ## 🛠️ Technology Stack
 
 - **Backend:** Python, FastAPI, Uvicorn, OpenCV (`cv2`), Requests, Pydantic
-- **Frontend:** HTML5, CSS3 (Flexbox), Vanilla JavaScript (Fetch API)
+- **Frontend:** HTML5, CSS3, Vanilla JavaScript (Fetch API)
 - **AI Provider:** Sarvam AI Python SDK
 
 ## 📁 Project Structure
@@ -26,7 +26,7 @@ Telugu_OCR/
 │
 ├── backend/
 │   ├── main.py              # FastAPI application & OpenCV logic
-│   ├── braille.py           # Telugu to Bharati Braille mapping
+│   ├── braille.csv          # Telugu to Bharati Braille mapping
 │   ├── requirements.txt     # Python dependencies
 │   └── .env                 # API Keys (Create this file)
 │
