@@ -5,9 +5,12 @@ from fastapi.responses import StreamingResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from sarvamai import SarvamAI
-from braille import TELUGU_TO_BRAILLE
+import pandas as pd
 
 load_dotenv()
+
+df = pd.read_csv("braille.csv")
+TELUGU_TO_BRAILLE = dict(zip(df["Telugu_char"], df["Braille_char"]))
 
 app = FastAPI(title="Telugu OCR, TTS & Braille API")
 
@@ -32,7 +35,7 @@ class BrailleRequest(BaseModel):
 
 
 def text_to_braille(text: str) -> str:
-    return "".join([TELUGU_TO_BRAILLE.get(char, char) for char in text])
+    return "".join([str(TELUGU_TO_BRAILLE.get(char, char)) for char in text])
 
 
 @app.get("/capture-image")
